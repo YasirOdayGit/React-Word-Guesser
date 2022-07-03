@@ -111,7 +111,7 @@ const MainGame = (props: Props) => {
         {winTries.current === 5 && <h2>WINNER</h2>}
         {/* {tries.current + stage.current} */}
         {tries.current + stage.current === 24 && <h3>THATS NOT IT {":("}</h3>}
-        {tries.current + stage.current === 24 && (
+        {(tries.current + stage.current === 24 || winTries.current === 5) && (
           <button
             onClick={() => {
               tries.current = 0;
