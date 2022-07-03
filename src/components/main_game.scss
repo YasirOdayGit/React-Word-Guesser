@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=The+Nautigal:wght@400;700&display=swap");
+
+.maincontent {
+  display: grid;
+  place-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+h1 {
+  color: rgb(0 0 0 / 0.85);
+  font-family: "The Nautigal", cursive;
+  font-size: 50px;
+}
+
+h2 {
+  color: rgba(0, 255, 55, 0.85);
+  font-size: 20px;
+}
+h3 {
+  color: rgba(255, 51, 0, 0.85);
+  font-size: 20px;
+}
+button {
+  padding: 10px 30px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid rgb(211, 211, 255);
+  background-color: rgb(223, 236, 255);
+  color: black;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: rgb(204, 216, 235);
+  }
+}
+.wordscontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.card {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 0px rgb(0 0 0 /0.2);
+  color: white;
+  font-weight: 700;
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  transition: background-color 0.1s, transform 0.5s;
+  transform: rotate3d(1, 0, 0, -180deg);
+  &[hascontent="true"] {
+    transform: rotate3d(1, 0, 0, 0deg);
+  }
+  @media (max-width: 425px) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.card:after {
+  content: "";
+  right: 0px;
+  bottom: 0px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 0px rgb(0 0 0 /0.2);
+  -webkit-transform: rotateY(180deg);
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+}
+
+.correct {
+  background-color: green;
+}
+
+.false {
+  background-color: red;
+}
+
+.almost {
+  background-color: grey;
+}
+
+input {
+  display: grid;
+  place-items: center;
+  width: 150px;
+  height: 40px;
+  background-color: rgb(223, 236, 255);
+  outline: none;
+  border: none;
+  text-align: center;
+  &::placeholder {
+    color: #666;
+    font-weight: 700;
+  }
+}
